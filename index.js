@@ -19,10 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
+    credentials: false,
+    origin: "*",
+  })
+);
+/* app.use(
+  cors({
     credentials: true,
     origin: "https://falso-netflix.vercel.app",
   })
-);
+); */
 
 mongoConnect();
 
