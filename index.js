@@ -19,7 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    credentials: false,
     origin: "*",
   })
 );
@@ -35,7 +34,10 @@ mongoConnect();
 // rutas
 app.use("/users", userRoutes);
 app.use("/auth", authRoutes);
-
+app.get("/ping", (req, res)=>{
+  console.log("someone has pinged");
+  res.send("pong");
+})
 app.listen(port, () =>
   console.log("> Server is up and running on port : " + port)
 );
