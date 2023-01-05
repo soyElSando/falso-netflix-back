@@ -32,7 +32,7 @@ app.use(
 mongoConnect();
 
 // rutas
-app.use("/users", userRoutes);
+//app.use("/users", userRoutes);
 app.use("/auth", authRoutes);
 app.get("/ping", (req, res)=>{
   console.log("someone has pinged");
